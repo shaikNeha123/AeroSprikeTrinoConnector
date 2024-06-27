@@ -32,9 +32,8 @@ public class AerospikeRecordSetProvider
 
     @Inject
     public AerospikeRecordSetProvider(AerospikeSession aerospikeSession)
-//    , CassandraTypeManager cassandraTypeManager)
     {
-        this.aerospikeSession = requireNonNull(aerospikeSession, "cassandraSession is null");
+        this.aerospikeSession = requireNonNull(aerospikeSession, "aerospikeSession is null");
 //        this.aerospikeTypeManager = requireNonNull(aerospikeTypeManager);
     }
 
