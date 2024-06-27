@@ -36,15 +36,15 @@ public class AerospikeMetadata
 
     @Inject
     public AerospikeMetadata(){}
-//            Aerospikesession aerospikeSession,
-//            CassandraPartitionManager partitionManager,
+//            AerospikeSession aerospikeSession,
+//            AerospikePartitionManager partitionManager,
 //            JsonCodec<List<ExtraColumnMetadata>> extraColumnMetadataCodec,
 //            AerospikeTypeManager aerospikeTypeManager,
 //            AerospikeClientConfig config)
 //    {
 //        this.partitionManager = requireNonNull(partitionManager, "partitionManager is null");
-//        this.cassandraSession = requireNonNull(aerospikeSession, "aerospikeSession is null");
-//        this.cassandraTypeManager = requireNonNull(aerospikeTypeManager, "aerospikeTypeManager is null");
+//        this.aerospikeSession = requireNonNull(aerospikeSession, "aerospikeSession is null");
+//        this.aerospikeTypeManager = requireNonNull(aerospikeTypeManager, "aerospikeTypeManager is null");
 //        this.allowDropTable = config.getAllowDropTable();
 //        this.extraColumnMetadataCodec = requireNonNull(extraColumnMetadataCodec, "extraColumnMetadataCodec is null");
 //    }
@@ -68,7 +68,7 @@ public class AerospikeMetadata
     public ConnectorTableMetadata getTableMetadata(ConnectorSession session, ConnectorTableHandle tableHandle)
     {
 //        requireNonNull(tableHandle, "tableHandle is null");
-//        CassandraTableHandle handle = (CassandraTableHandle) tableHandle;
+//        AerospikeTableHandle handle = (AerospikeTableHandle) tableHandle;
 //        if (handle.relationHandle() instanceof AerospikeQueryRelationHandle queryRelationHandle) {
 //            List<ColumnMetadata> columns = getColumnHandles(queryRelationHandle.getQuery()).stream()
 //                    .map(AerospikeTableHandle.class::cast)
@@ -81,10 +81,10 @@ public class AerospikeMetadata
 
     private ConnectorTableMetadata getTableMetadata(SchemaTableName tableName)
     {
-//        CassandraTable table = cassandraSession.getTable(tableName);
+//        AerospikeTable table = aerospikeSession.getTable(tableName);
         List<ColumnMetadata> columns = null;
 //        table.columns().stream()
-//                .map(CassandraColumnHandle::getColumnMetadata)
+//                .map(AerospikeColumnHandle::getColumnMetadata)
 //                .collect(toList());
         return new ConnectorTableMetadata(tableName, columns);
     }
