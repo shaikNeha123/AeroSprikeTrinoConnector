@@ -1,0 +1,62 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.example</groupId>
+  <artifactId>Sampleaerospikeconnector</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <name>Archetype - Sampleaerospikeconnector</name>
+  <url>http://maven.apache.org</url>
+
+  <dependencies>
+  <dependency>
+    <groupId>io.prestosql</groupId>
+    <artifactId>presto-main</artifactId>
+    <version>350</version>
+  </dependency>
+  <dependency>
+    <groupId>io.prestosql</groupId>
+    <artifactId>presto-spi</artifactId>
+    <version>350</version>
+    <scope>provided</scope>
+  </dependency>
+  <dependency>
+    <groupId>com.aerospike</groupId>
+    <artifactId>aerospike-client</artifactId>
+    <version>8.0.0</version>
+  </dependency>
+    <dependency>
+      <groupId>com.aerospike</groupId>
+      <artifactId>spring-boot-starter-data-aerospike</artifactId>
+      <version>0.15.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.hibernate.orm</groupId>
+      <artifactId>hibernate-core</artifactId>
+      <version>6.5.2.Final</version>
+    </dependency>
+    <dependency>
+      <groupId>io.trino</groupId>
+      <artifactId>trino-spi</artifactId>
+      <version>450</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.facebook.presto</groupId>
+      <artifactId>presto-jdbc</artifactId>
+      <version>0.93</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
+        <configuration>
+          <release>11</release>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
