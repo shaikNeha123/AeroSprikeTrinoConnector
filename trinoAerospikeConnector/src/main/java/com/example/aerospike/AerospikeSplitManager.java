@@ -18,6 +18,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import com.google.inject.Inject;
 import io.airlift.log.Logger;
+import io.trino.plugin.cassandra.CassandraSplit;
 import io.trino.spi.HostAddress;
 import io.trino.spi.connector.*;
 import io.trino.spi.predicate.TupleDomain;
@@ -38,7 +39,16 @@ public class AerospikeSplitManager
             Constraint constraint) {
         // Implement logic to create and return splits for parallel execution
         // Example:
-        List<ConnectorSplit> splits =null;
-        return new FixedSplitSource(splits);
+        AerospikeTableHandle aerospikeTableHandle = (AerospikeTableHandle) connectorTableHandle;
+        // Logic to create splits (partitions) based on metadata and splitSchedulingContext
+        List<ConnectorSplit> splits = createSplitsForTable(aerospikeTableHandle);
+       return new FixedSplitSource(splits);
     }
+    private List<ConnectorSplit> createSplitsForTable(AerospikeTableHandle tableHandle) {
+        // Logic to create splits (partitions) for the specified table
+        // Use Aerospike Java client to get partition information
+        // Return list of ConnectorSplits
+        return null;
+    }
+
 }
