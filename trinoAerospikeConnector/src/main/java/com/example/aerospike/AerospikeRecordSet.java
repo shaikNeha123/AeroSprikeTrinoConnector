@@ -28,24 +28,24 @@ import static java.util.Objects.requireNonNull;
 public class AerospikeRecordSet
         implements RecordSet
 {
-//    private final AerospikeSession cassandraSession;
-//    private final AerospikeTypeManager cassandraTypeManager;
+//    private final AerospikeSession aerospikeSession;
+//    private final AerospikeTypeManager aerospikeTypeManager;
 //    private final String cql;
-//    private final List<String> cassandraNames;
-//    private final List<AerospikeType> cassandraTypes;
+//    private final List<String> aerospikeNames;
+//    private final List<AerospikeType> aerospikeTypes;
 //    private final List<Type> columnTypes;
 
 //    public AerospikeRecordSet(){}
-//    AerospikeSession aerospikeSession, AerospikeTypeManager aerospikeTypeManager, String cql, List<AerospikeColumnHandle> cassandraColumns)
+//    AerospikeSession aerospikeSession, AerospikeTypeManager aerospikeTypeManager, String cql, List<AerospikeColumnHandle> aerospikeColumns)
 //    {
-//        this.cassandraSession = requireNonNull(aerospikeSession, "aerospikeSession is null");
-//        this.cassandraTypeManager = requireNonNull(aerospikeTypeManager, "aerospikeTypeManager is null");
+//        this.aerospikeSession = requireNonNull(aerospikeSession, "aerospikeSession is null");
+//        this.aerospikeTypeManager = requireNonNull(aerospikeTypeManager, "aerospikeTypeManager is null");
 //        this.cql = requireNonNull(cql, "cql is null");
 //
-//        requireNonNull(cassandraColumns, "cassandraColumns is null");
-//        this.cassandraNames = transformList(cassandraColumns, CassandraColumnHandle::name);
-//        this.cassandraTypes = transformList(cassandraColumns, CassandraColumnHandle::cassandraType);
-//        this.columnTypes = transformList(cassandraColumns, CassandraColumnHandle::getType);
+//        requireNonNull(aerospikeColumns, "aerospikeColumns is null");
+//        this.aerospikeNames = transformList(aerospikeColumns, AerospikeColumnHandle::name);
+//        this.aerospikeTypes = transformList(aerospikeColumns, AerospikeColumnHandle::aerospikeType);
+//        this.columnTypes = transformList(aerospikeColumns, AersopikeColumnHandle::getType);
 //    }
 
     public AerospikeRecordSet(ConnectorSplit split, List<? extends ColumnHandle> columns) {
@@ -60,7 +60,7 @@ public class AerospikeRecordSet
     @Override
     public RecordCursor cursor()
     {
-        return null;//new AerospikeRecordCursor(aerospikeSession, aerospikeTypeManager, aerospikeNames, cassandraTypes, cql);
+        return null;//new AerospikeRecordCursor(aerospikeSession, aerospikeTypeManager, aerospikeNames, aerospikeTypes, cql);
     }
 
     private static <T, R> List<R> transformList(List<T> list, Function<T, R> function)
