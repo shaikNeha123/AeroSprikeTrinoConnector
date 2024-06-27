@@ -1,4 +1,5 @@
-package com.example.aerospike;
+package com.example.simpleaerospikeconnecter.src.main.java.com.example.aerospike;
+
 import com.aerospike.client.AerospikeClient;
 import io.trino.spi.HostAddress;
 import io.trino.spi.connector.ConnectorTableLayout;
